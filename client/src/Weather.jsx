@@ -39,9 +39,9 @@ class Weather extends Component {
         return(
             <section id="weather">
                 <h1>5-Day Forecast</h1>
+                <h2 id="location">{location.name}</h2>
                 {forecast.map( (el, i) =>
                     <section className="forecast" key={i}>
-                        <h2 id="location">{location.name}</h2>
                         <p id="day">Day:{" "}{new Date(el.date_epoch*1000).toUTCString().slice(0, 16)}</p>
                         <img src={el.day.condition.icon} alt={el.day.condition.text} />
                         <p id="high-temp">High:{" "}{el.day.maxtemp_f} &deg;F</p>
