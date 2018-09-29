@@ -70,16 +70,16 @@ class Weather extends Component {
         if (loading) {
             return (
                 <div id="loading">
-                    <i id="loading" className="fas fa-spinner fa-pulse"></i>
+                    <i className="fas fa-spinner fa-pulse"></i>
                 </div>
             )
         }
 
         if (!forecast) {
             return (
-                <div id="technical-difficulty">
+                <div id="technical-difficulties">
                     <i className="fas fa-exclamation"></i>
-                    <p>We are experiencing technical difficulties.<br />
+                    <p>We are experiencing technical difficulties. <br />
                     Please try again later.</p>
                 </div>
             )
