@@ -22,7 +22,9 @@ app.get('/weather', function (req, res, next) {
             res.status(200)
                 .send({
                     status: 'success',
-                    data: response.data
+                    location: response.data.location,
+                    current: response.data.current,
+                    forecast: response.data.forecast.forecastday
                 });
         })
         .catch( err => {
