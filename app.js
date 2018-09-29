@@ -16,8 +16,8 @@ app.get('/', function (req, res, next) {
     res.send("APIXU Weather Routes");
 });
 
-app.get('/weather', function (req, res, next) {
-    axios.get(`https://api.apixu.com/v1/forecast.json?key=${key.api_key}&q=new%20york&days=5`)
+app.get('/weather/:city', function (req, res, next) {
+    axios.get(`https://api.apixu.com/v1/forecast.json?key=${key.api_key}&q=${req.params.city}&days=5`)
         .then( response => {
             res.status(200)
                 .send({
