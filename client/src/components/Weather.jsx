@@ -68,11 +68,21 @@ class Weather extends Component {
         console.log("city input: ", city_input);
 
         if (loading) {
-            return <div>Loading...</div>
+            return (
+                <div id="loading">
+                    <i className="fas fa-spinner fa-pulse"></i>
+                </div>
+            )
         }
 
         if (!forecast) {
-            return <div>Try again later.</div>
+            return (
+                <div id="technical-difficulties">
+                    <i className="fas fa-exclamation"></i>
+                    <p>We are experiencing technical difficulties. <br />
+                    Please try again later.</p>
+                </div>
+            )
         }
 
         return(
