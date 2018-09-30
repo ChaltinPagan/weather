@@ -64,7 +64,6 @@ header {
   box-sizing: border-box;
   width: 225px;
   height: 525px;
-  /* padding: 1em; */
   margin-bottom: 2em;
   border: 1px solid #1c647e;
 }
@@ -114,4 +113,35 @@ header {
 .fa-exclamation {
   color: #1c647e;
   margin-bottom: 0.25em;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    height: 125px;
+  }
+  header h1 {
+    text-align: center;
+  }
+  #temp-choice {
+    padding-right: 2em;
+    margin-top: 1em;
+  }
+  #forecast {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .daily-forecast {
+    width: 300px;
+  }
+  .btn {
+    background-color: #fff;
+  }
+  #temp-choice .btn {
+    border-color: #000;
+  }
+  .active-temp {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+  }
 }
