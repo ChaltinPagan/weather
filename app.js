@@ -2,11 +2,10 @@ const express = require('express');
 const logger = require('morgan');
 const app = express();
 const axios = require('axios');
-const key = require('env.js');
+const key = require('./env.js');
 const port = 8000;
 
 app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/', function (req, res, next) {
     res.send("APIXU Weather Routes");
@@ -27,10 +26,6 @@ app.get('/weather/:city', function (req, res, next) {
             console.log(err);
         })
 })
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
