@@ -99,3 +99,19 @@ header {
 .fa-spinner {
   color: #1c647e;
 }
+/* end of loading icon styling */
+
+/* Technical Difficulties styling */
+#technical-difficulties {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-exclamation {
+  color: #1c647e;
+  margin-bottom: 0.25em;
+}

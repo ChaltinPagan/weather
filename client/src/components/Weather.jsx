@@ -91,7 +91,7 @@ class Weather extends Component {
         if (!forecast) {
             return (
                 <div id="technical-difficulties">
-                    <i className="fas fa-exclamation"></i>
+                    <i className="fas fa-10x fa-exclamation"></i>
                     <p>We are experiencing technical difficulties. <br />
                     Please try again later.</p>
                 </div>
