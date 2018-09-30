@@ -51,15 +51,11 @@ class Weather extends Component {
         let f = document.getElementById('fahrenheit');
 
         if (temp_unit === "fahrenheit") {
-            c.classList.remove('btn-outline-dark')
-            c.classList.add('btn-dark')
-            f.classList.remove('btn-dark')
-            f.classList.add('btn-outline-dark')
+            f.classList.remove('active-temp');
+            c.classList.add('active-temp');
         } else {
-            c.classList.remove('btn-dark')
-            c.classList.add('btn-outline-dark')
-            f.classList.remove('btn-outline-dark')
-            f.classList.add('btn-dark')
+            c.classList.remove('active-temp');
+            f.classList.add('active-temp');
         }
 
         this.setState({
@@ -87,7 +83,7 @@ class Weather extends Component {
         if (loading) {
             return (
                 <div id="loading">
-                    <i className="fas fa-spinner fa-pulse"></i>
+                    <i className="fas fa-spinner fa-10x fa-pulse"></i>
                 </div>
             )
         }
