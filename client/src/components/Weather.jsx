@@ -95,9 +95,11 @@ class Weather extends Component {
                 handleCityInput={this.handleCityInput} 
                 getWeather={this.getWeather} />
                 
-                <section id="temp-choice" className="btn-group" >
-                    <button type="button" className="btn btn-outline-dark" id="celsius" name="temp_unit" onClick={this.handleTempUnit}>&deg;C</button>
-                    <button type="button" className="btn btn-dark" id="fahrenheit" name="temp_unit" onClick={this.handleTempUnit}>&deg;F</button>
+                <section id="temp-choice">
+                    <div className="btn-group">
+                        <button type="button" className="btn btn-outline-dark" id="celsius" name="temp_unit" onClick={this.handleTempUnit}>&deg;C</button>
+                        <button type="button" className="btn btn-dark" id="fahrenheit" name="temp_unit" onClick={this.handleTempUnit}>&deg;F</button>
+                    </div>
                 </section>
 
                 <Forecast forecast={forecast} 
