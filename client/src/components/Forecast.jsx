@@ -10,8 +10,8 @@ const Forecast = ({ forecast, temp_unit }) => {
                     <img src={el.day.condition.icon} alt={el.day.condition.text} id="condition-icon"/>
                     <p id="condition-text" className="card-title">{el.day.condition.text}</p>
                     <hr />
-                    <p id="high-temp">High:{" "}{temp_unit === "fahrenheit" ? el.day.maxtemp_f : el.day.maxtemp_c}</p>
-                    <p id="low-temp">Low:{" "}{temp_unit === "fahrenheit" ?el.day.mintemp_f : el.day.mintemp_c}</p>
+                    <p id="high-temp">High:{" "}{temp_unit === "fahrenheit" ? el.day.maxtemp_f + " F" : el.day.maxtemp_c + " C"}</p>
+                    <p id="low-temp">Low:{" "}{temp_unit === "fahrenheit" ?el.day.mintemp_f + " F" : el.day.mintemp_c + " C"}</p>
                     <p id="precipitation">Precipitation:{" "} {el.day.totalprecip_in} in.</p>
                     <p id="humidity">Humidity:{" "}{el.day.avghumidity}%</p>
                     <p id="uv-index">UV Index:{" "}{el.day.uv}</p>

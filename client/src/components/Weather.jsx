@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Form from './Form';
 import Forecast from './Forecast';
+import TempUnit from './TempUnit';
 
 class Weather extends Component {
     constructor(){
@@ -27,6 +28,7 @@ class Weather extends Component {
                             location: res.data.location,
                             current: res.data.current,
                             forecast: res.data.forecast,
+                            temp_unit: "fahrenheit", 
                             loading: false
                         })
                     }, 2000)
@@ -44,7 +46,22 @@ class Weather extends Component {
     }
 
     handleTempUnit = (e) => {
-        e.preventDefault();
+        const { temp_unit } = this.state;
+        let c = document.getElementById('celsius');
+        let f = document.getElementById('fahrenheit');
+
+        if (temp_unit === "fahrenheit") {
+            c.classList.remove('btn-outline-dark')
+            c.classList.add('btn-dark')
+            f.classList.remove('btn-dark')
+            f.classList.add('btn-outline-dark')
+        } else {
+            c.classList.remove('btn-dark')
+            c.classList.add('btn-outline-dark')
+            f.classList.remove('btn-outline-dark')
+            f.classList.add('btn-dark')
+        }
+
         this.setState({
             [e.target.name]: e.target.id
         })
@@ -95,12 +112,13 @@ class Weather extends Component {
                 handleCityInput={this.handleCityInput} 
                 getWeather={this.getWeather} />
                 
-                <section id="temp-choice">
+                <TempUnit handleTempUnit={this.handleTempUnit} />
+                {/* <section id="temp-choice">
                     <div className="btn-group">
                         <button type="button" className="btn btn-outline-dark" id="celsius" name="temp_unit" onClick={this.handleTempUnit}>&deg;C</button>
                         <button type="button" className="btn btn-dark" id="fahrenheit" name="temp_unit" onClick={this.handleTempUnit}>&deg;F</button>
                     </div>
-                </section>
+                </section> */}
 
                 <Forecast forecast={forecast} 
                 temp_unit={temp_unit} />
