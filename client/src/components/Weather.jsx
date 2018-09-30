@@ -34,15 +34,6 @@ class Weather extends Component {
                     }, 2000)
                 })
         })
-        // axios.get(`/weather/${city_input}`)
-        //     .then( res => {
-        //         console.log(res.data);
-        //         this.setState({
-        //             location: res.data.location,
-        //             current: res.data.current,
-        //             forecast: res.data.forecast
-        //         })
-        //     })
     }
 
     handleTempUnit = (e) => {
@@ -76,9 +67,6 @@ class Weather extends Component {
 
     render(){
         const { location, forecast, temp_unit, city_input, loading } = this.state;
-        console.log("forecast: ", forecast);
-        console.log("temp unit: ", temp_unit);
-        console.log("city input: ", city_input);
 
         if (loading) {
             return (
@@ -109,12 +97,6 @@ class Weather extends Component {
                 getWeather={this.getWeather} />
                 
                 <TempUnit handleTempUnit={this.handleTempUnit} />
-                {/* <section id="temp-choice">
-                    <div className="btn-group">
-                        <button type="button" className="btn btn-outline-dark" id="celsius" name="temp_unit" onClick={this.handleTempUnit}>&deg;C</button>
-                        <button type="button" className="btn btn-dark" id="fahrenheit" name="temp_unit" onClick={this.handleTempUnit}>&deg;F</button>
-                    </div>
-                </section> */}
 
                 <Forecast forecast={forecast} 
                 temp_unit={temp_unit} />

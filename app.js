@@ -1,18 +1,16 @@
 const express = require('express');
 const logger = require('morgan');
-const path = require('path');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const app = express();
 const axios = require('axios');
 const key = require('./env.js');
 const port = 8000;
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function (req, res, next) {
-    // res.sendFile(path.join(__dirname, 'routes.html'));
     res.send("APIXU Weather Routes");
 });
 
