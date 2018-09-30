@@ -1,28 +1,64 @@
-.App {
+header {
+  background-color: #55accf;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* City input form */
+#city {
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#city-input {
+  font-size: 1.5em;
+}
+/* end of City input form styling */
+
+/* temp choice buttons */
+#temp-choice {
+  text-align: right;
+  padding-right: 25px;
+}
+
+/* 5-day forecast */
+#forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2em 5em;
+}
+
+.daily-forecast {
+  box-sizing: border-box;
+  width: 225px;
+  height: 525px;
+  /* padding: 1em; */
+  margin-bottom: 2em;
+  border: 1px solid #1c647e;
+}
+
+.daily-forecast hr {
+  margin-top: 2em;
+}
+
+#day, #condition-text {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#condition-text {
+  height: 2em;
+  margin-top: 1em;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#condition-icon {
+  display: block;
+  margin: auto;
 }
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+/* end of 5-day forecast styling */
