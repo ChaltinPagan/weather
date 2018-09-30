@@ -2,8 +2,8 @@ const express = require('express');
 const logger = require('morgan');
 const app = express();
 const axios = require('axios');
-const key = process.env.API_KEY;
-const port = process.env.PORT || 8000;
+const key = require('env.js');
+const port = 8000;
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'client/build')));
